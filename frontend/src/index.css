@@ -7,45 +7,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  background-color: #404040;
-  padding: 1rem;
-}
-
-header a {
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+.site-container {
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
+  flex: 1;
 }
 
-.products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.product {
-  border: 1px solid #404040;
-  margin: 1rem;
-}
-
-.product img {
+.loading-container {
   width: 100%;
-  max-width: 350px;
 }
 
-.product-info {
-  padding: 1rem;
+.error-container {
+  width: 100%;
+}
+
+.error {
+  text-align: center;
+  position: relative;
+  top: 10rem;
+  font-size: larger;
+  font-weight: 600;
+  color: rgb(228, 12, 12);
 }
 
 .loader {
   width: 98px;
   height: 98px;
   border-radius: 50%;
+  margin: 0 auto;
   position: relative;
   top: 10rem;
   animation: rotate 1s linear infinite
@@ -93,9 +84,21 @@ main {
   }
 }
 
-.error {
-  position: relative;
-  top: 10rem;
-  font-size: larger;
-  color: rgb(234, 95, 95);
+
+.rating-star {
+  color: #ffc000;
+}
+
+.btn-primary {
+  background-color: #f0c040;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img-large {
+  width: 100%;
+  max-width: 375px;
 }
