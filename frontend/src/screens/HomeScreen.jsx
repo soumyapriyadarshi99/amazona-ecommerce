@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Product from "../components/Product";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import { Helmet } from "react-helmet"; 
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -32,7 +33,8 @@ const HomeScreen = () => {
     dispatch({ type: "FETCH_REQUEST" });
     try {
       const result = await axios.get("http://localhost:5000/api/products");
-      dispatch({ type: "FETCH_SUCCESS", payload: result.data.products });
+      // console.log(result);
+      dispatch({ type: "FETCH_SUCCESS", payload: result.data });
     } catch (error) {
       dispatch({ type: "FETCH_FAIL", payload: error.message });
     }
@@ -42,8 +44,13 @@ const HomeScreen = () => {
     fetchProduct();
   }, []);
 
+  // console.log(products);
+
   return (
     <div>
+      <Helmet>
+        <title>amazona</title>
+      </Helmet>
       <h1>Featured products</h1>
       <div className="products">
         {loading ? (
